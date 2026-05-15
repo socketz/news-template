@@ -16,14 +16,14 @@
         
         <div class="flex md:hidden items-center gap-4">
             <button 
-                class="z-30 button-menu-toggle" 
+                class="z-30 button-menu-toggle cursor-pointer" 
                 data-mobile-menu-toggle
                 aria-haspopup="true" 
                 aria-expanded="false" 
                 aria-label="Open navigation menu"
             >
-                <span class="button-menu-toggle__line"></span>
-                <span class="button-menu-toggle__line"></span>
+                <span class="button-menu-toggle-line"></span>
+                <span class="button-menu-toggle-line"></span>
                 <span class="sr-only">Menu</span>
             </button>
         </div>
@@ -82,12 +82,12 @@
         md:hidden 
         invisible 
         transition-all 
-        duration-[640ms] 
+        duration-640 
         ease-out-expo 
         translate-x-full 
         h-screen 
         w-full
-        fixed 
+        absolute
         top-0
         left-0 
         z-20
@@ -100,10 +100,10 @@
         <ul class="flex flex-col pt-5">
             {% for link in settings.navigation.NavigationSettings.primary_navigation %}
                 <li class="
-                    border-t-[1px]
+                    border-t
                     border-dashed
                     border-mackerel-200
-                    last-of-type:border-b-[1px]
+                    last-of-type:border-b
                 ">
                     {% if link.value.page %}
                         <a 
@@ -149,8 +149,7 @@
         pt-24
         w-full
         h-full 
-        bg-black
-        bg-opacity-20
+        bg-black/20
         "
     >
         {% include "components/search.html" with variant="search-panel" %}
